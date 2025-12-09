@@ -13,4 +13,3 @@ const Layout = () => {
 };
 
 export default Layout;
-//32.52
