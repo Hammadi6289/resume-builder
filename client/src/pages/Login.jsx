@@ -5,14 +5,14 @@ const Login = () => {
   ////returns the query string portion of the current URL, including the leading ?.
   /// For example, if the URL is https://example.com/page?name=John&age=30,
   /// window.location.search would return "?name=John&age=30"
-  const urlState = query.get("query");
-  const [state, setState] = React.useState("login");
+  const urlState = query.get("state");
+  const [state, setState] = React.useState(urlState || "login");
+
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
     password: "",
   });
-  // 1:25:25
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,7 +119,7 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="mt-2 w-full h-11 rounded-full text-white bg-indigo-500 hover:opacity-90 transition-opacity"
+          className="mt-2 w-full h-11 rounded-full text-white bg-green-500 hover:opacity-90 transition-opacity"
         >
           {state === "login" ? "Login" : "Sign up"}
         </button>
@@ -132,7 +132,7 @@ const Login = () => {
           {state === "login"
             ? "Don't have an account?"
             : "Already have an account?"}{" "}
-          <a href="#" className="text-indigo-500 hover:underline">
+          <a href="#" className="text-green-500 hover:underline">
             click here
           </a>
         </p>
