@@ -27,7 +27,6 @@ const ResumeBuilder = () => {
     accent_color: "#3B82F6",
     public: false,
   });
-  const [temptest, setTemptest] = useState(22);
 
   const loadExistingResume = async () => {
     const resume = dummyResumeData.find((resume) => resume._id === resumeId);
@@ -57,30 +56,6 @@ const ResumeBuilder = () => {
 
   return (
     <div>
-      {/* added some test data for the control... Please delete the state before moving forward*/}
-      <div className="temp-container text-slate-500 bg-green-400">
-        <div className="temp-meter-display flex items-center font-medium text-gray-600 hover:bg-gray-50 transition-all">
-          {temptest} C
-        </div>
-        <button
-          onClick={() => {
-            setTemptest(temptest + 1);
-          }}
-          className="flex items-center gap-1 p-3 rounded-lg
-                    text-sm font-medium text-gray-600 hover:bg-gray-50 transition-all"
-        >
-          +
-        </button>
-        <button
-          onClick={() => {
-            setTemptest(temptest - 1);
-          }}
-          className="flex items-center gap-1 p-3 rounded-lg
-                    text-sm font-medium text-gray-600 hover:bg-gray-50 transition-all"
-        >
-          -
-        </button>
-      </div>
       <div className="max-w-7xl mx-auto px-4 py-6">
         <Link
           to={"/app"}
